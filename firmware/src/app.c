@@ -76,6 +76,10 @@
 // *****************************************************************************
 // *****************************************************************************
 
+
+
+
+
 // *****************************************************************************
 /* Application Data
 
@@ -202,7 +206,6 @@ void APP_Initialize ( void )
     See prototype in app.h.
  */
 
-
 void APP_Tasks ( void )
 {
     APP_Msg_T    appMsg[1];
@@ -210,7 +213,6 @@ void APP_Tasks ( void )
     p_appMsg=appMsg;
     eMBErrorCode eMBstatus;
     
-
     /* Check the application's current state. */
     switch ( appData.state )
     {

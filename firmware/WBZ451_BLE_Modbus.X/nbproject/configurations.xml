@@ -8,6 +8,8 @@
         <itemPath>../src/app_ble/app_ble_handler.h</itemPath>
         <itemPath>../src/app_ble/app_ble.h</itemPath>
         <itemPath>../src/app_ble/app_trsps_handler.h</itemPath>
+        <itemPath>../src/app_ble/app_ble_dsadv.h</itemPath>
+        <itemPath>../src/app_ble/app_ble_utility.h</itemPath>
       </logicalFolder>
       <logicalFolder name="config" displayName="config" projectFiles="true">
         <logicalFolder name="default" displayName="default" projectFiles="true">
@@ -37,19 +39,15 @@
                 <itemPath>../src/config/default/ble/middleware_ble/ble_dm/ble_dm_internal.h</itemPath>
                 <itemPath>../src/config/default/ble/middleware_ble/ble_dm/ble_dm_info.h</itemPath>
                 <itemPath>../src/config/default/ble/middleware_ble/ble_dm/ble_dm.h</itemPath>
-                <itemPath>../src/config/default/ble/middleware_ble/ble_dm/ble_dm_aes.h</itemPath>
                 <itemPath>../src/config/default/ble/middleware_ble/ble_dm/ble_dm_conn.h</itemPath>
               </logicalFolder>
               <logicalFolder name="ble_gcm" displayName="ble_gcm" projectFiles="true">
-                <itemPath>../src/config/default/ble/middleware_ble/ble_gcm/ble_scm.h</itemPath>
                 <itemPath>../src/config/default/ble/middleware_ble/ble_gcm/ble_dd.h</itemPath>
-              </logicalFolder>
-              <logicalFolder name="ble_log" displayName="ble_log" projectFiles="true">
-                <itemPath>../src/config/default/ble/middleware_ble/ble_log/ble_log.h</itemPath>
               </logicalFolder>
               <logicalFolder name="ble_util" displayName="ble_util" projectFiles="true">
                 <itemPath>../src/config/default/ble/middleware_ble/ble_util/mw_assert.h</itemPath>
                 <itemPath>../src/config/default/ble/middleware_ble/ble_util/byte_stream.h</itemPath>
+                <itemPath>../src/config/default/ble/middleware_ble/ble_util/mw_aes.h</itemPath>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="profile_ble" displayName="profile_ble" projectFiles="true">
@@ -96,9 +94,6 @@
             </logicalFolder>
             <logicalFolder name="cmcc" displayName="cmcc" projectFiles="true">
               <itemPath>../src/config/default/peripheral/cmcc/plib_cmcc.h</itemPath>
-            </logicalFolder>
-            <logicalFolder name="eic" displayName="eic" projectFiles="true">
-              <itemPath>../src/config/default/peripheral/eic/plib_eic.h</itemPath>
             </logicalFolder>
             <logicalFolder name="evsys" displayName="evsys" projectFiles="true">
               <itemPath>../src/config/default/peripheral/evsys/plib_evsys.h</itemPath>
@@ -159,6 +154,7 @@
           <itemPath>../src/config/default/device_cache.h</itemPath>
           <itemPath>../src/config/default/user.h</itemPath>
           <itemPath>../src/config/default/device_sleep.h</itemPath>
+          <itemPath>../src/config/default/sys_tasks.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <logicalFolder name="FreeRTOS" displayName="FreeRTOS" projectFiles="true">
@@ -328,6 +324,11 @@
       <logicalFolder name="port" displayName="port" projectFiles="true">
         <itemPath>../src/port/port.h</itemPath>
       </logicalFolder>
+      <logicalFolder name="system" displayName="system" projectFiles="true">
+        <logicalFolder name="tmr" displayName="tmr" projectFiles="true">
+          <itemPath>../src/config/default/system/tmr/sys_tmr.h</itemPath>
+        </logicalFolder>
+      </logicalFolder>
       <logicalFolder name="wolfcrypt" displayName="wolfcrypt" projectFiles="true">
         <logicalFolder name="port" displayName="port" projectFiles="true">
           <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/port/pic32/crypt_ecc_pukcl.h</itemPath>
@@ -417,8 +418,6 @@
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/rc2.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/sp.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/chacha20_poly1305.h</itemPath>
-        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/rabbit.h</itemPath>
-        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/hc128.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/aes.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/sha.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/srp.h</itemPath>
@@ -436,7 +435,6 @@
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/fe_operations.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/fips_test.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/coding.h</itemPath>
-        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/idea.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/ripemd.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/mem_track.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/pwdbased.h</itemPath>
@@ -464,9 +462,20 @@
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/pkcs12.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/poly1305.h</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/compress.h</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/falcon.h</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/siphash.h</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/eccsi.h</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/sakke.h</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/kdf.h</itemPath>
       </logicalFolder>
       <itemPath>../src/app_idle_task.h</itemPath>
       <itemPath>../src/app.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="true">
+      <itemPath>Makefile</itemPath>
+      <itemPath>WBZ451_BLE_Modbus.mc3</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -480,6 +489,7 @@
         <itemPath>../src/app_ble/app_ble_handler.c</itemPath>
         <itemPath>../src/app_ble/app_ble.c</itemPath>
         <itemPath>../src/app_ble/app_trsps_handler.c</itemPath>
+        <itemPath>../src/app_ble/app_ble_utility.c</itemPath>
       </logicalFolder>
       <logicalFolder name="config" displayName="config" projectFiles="true">
         <logicalFolder name="default" displayName="default" projectFiles="true">
@@ -493,10 +503,12 @@
                 <itemPath>../src/config/default/ble/middleware_ble/ble_dm/ble_dm_info.c</itemPath>
                 <itemPath>../src/config/default/ble/middleware_ble/ble_dm/ble_dm.c</itemPath>
                 <itemPath>../src/config/default/ble/middleware_ble/ble_dm/ble_dm_conn.c</itemPath>
-                <itemPath>../src/config/default/ble/middleware_ble/ble_dm/ble_dm_aes.c</itemPath>
               </logicalFolder>
               <logicalFolder name="ble_gcm" displayName="ble_gcm" projectFiles="true">
                 <itemPath>../src/config/default/ble/middleware_ble/ble_gcm/ble_dd.c</itemPath>
+              </logicalFolder>
+              <logicalFolder name="ble_util" displayName="ble_util" projectFiles="true">
+                <itemPath>../src/config/default/ble/middleware_ble/ble_util/mw_aes.c</itemPath>
               </logicalFolder>
             </logicalFolder>
             <logicalFolder name="profile_ble" displayName="profile_ble" projectFiles="true">
@@ -523,9 +535,6 @@
             </logicalFolder>
             <logicalFolder name="cmcc" displayName="cmcc" projectFiles="true">
               <itemPath>../src/config/default/peripheral/cmcc/plib_cmcc.c</itemPath>
-            </logicalFolder>
-            <logicalFolder name="eic" displayName="eic" projectFiles="true">
-              <itemPath>../src/config/default/peripheral/eic/plib_eic.c</itemPath>
             </logicalFolder>
             <logicalFolder name="evsys" displayName="evsys" projectFiles="true">
               <itemPath>../src/config/default/peripheral/evsys/plib_evsys.c</itemPath>
@@ -672,13 +681,10 @@
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/hmac.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/tfm.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_x86_64.c</itemPath>
-        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/hc128.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/camellia.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/wc_pkcs11.c</itemPath>
-        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/idea.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/wc_dsp.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_c64.c</itemPath>
-        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/rabbit.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/rsa.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/cmac.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/md5.c</itemPath>
@@ -722,17 +728,16 @@
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/rc2.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sp_arm32.c</itemPath>
         <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/ge_operations.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/eccsi.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/kdf.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/sakke.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/falcon.c</itemPath>
+        <itemPath>../src/third_party/wolfssl/wolfssl/wolfcrypt/src/siphash.c</itemPath>
       </logicalFolder>
       <itemPath>../src/app_user_edits.c</itemPath>
       <itemPath>../src/app_idle_task.c</itemPath>
       <itemPath>../src/app.c</itemPath>
       <itemPath>../src/main.c</itemPath>
-    </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
-      <itemPath>Makefile</itemPath>
-      <itemPath>WBZ451_BLE_Modbus.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
@@ -749,12 +754,12 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>pkob4hybrid</platformTool>
         <languageToolchain>XC32</languageToolchain>
-        <languageToolchainVersion>4.10</languageToolchainVersion>
+        <languageToolchainVersion>4.45</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>
         <pack name="CMSIS" vendor="ARM" version="5.8.0"/>
-        <pack name="PIC32CX-BZ_DFP" vendor="Microchip" version="1.1.116"/>
+        <pack name="PIC32CX-BZ_DFP" vendor="Microchip" version="1.4.243"/>
       </packs>
       <ScriptingSettings>
       </ScriptingSettings>
@@ -762,8 +767,8 @@
         <linkerTool>
           <linkerLibItems>
             <linkerLibFileItem>../src/config/default/driver/pds/pds.a</linkerLibFileItem>
-            <linkerLibFileItem>../src/config/default/ble/lib/ble_stack.a</linkerLibFileItem>
             <linkerLibFileItem>../src/config/default/driver/device_support/pic32cx_bz2_device_support.a</linkerLibFileItem>
+            <linkerLibFileItem>../src/config/default/ble/lib/ble_stack_bz2_lib.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>
@@ -789,6 +794,7 @@
       <C32>
         <property key="additional-warnings" value="true"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="enable-app-io" value="false"/>
         <property key="enable-omit-frame-pointer" value="false"/>
         <property key="enable-symbols" value="true"/>
@@ -846,6 +852,7 @@
         <property key="additional-options-use-response-files" value="false"/>
         <property key="additional-options-write-sla" value="false"/>
         <property key="allocate-dinit" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="code-dinit" value="false"/>
         <property key="ebase-addr" value=""/>
         <property key="enable-check-sections" value="false"/>
@@ -885,6 +892,7 @@
       <C32CPP>
         <property key="additional-warnings" value="false"/>
         <property key="addresss-attribute-use" value="false"/>
+        <property key="appendMe" value=""/>
         <property key="check-new" value="false"/>
         <property key="eh-specs" value="true"/>
         <property key="enable-app-io" value="false"/>
@@ -913,6 +921,7 @@
         <property key="use-indirect-calls" value="false"/>
       </C32CPP>
       <C32Global>
+        <property key="appendMe" value=""/>
         <property key="common-include-directories" value=""/>
         <property key="gp-relative-option" value=""/>
         <property key="legacy-libc" value="false"/>
